@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.awt.event.ActionEvent;
 
 @Entity
 @Table(name = "answer")
@@ -27,5 +28,8 @@ public class Answer {
     @ManyToOne
     @JoinColumn(name = "question_id")
     private Question question;
+
+    @OneToMany(mappedBy = "answer")
+    private AnswerEvent answerEvent;
 
 }
