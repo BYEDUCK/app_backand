@@ -68,4 +68,9 @@ public class QuestionServiceImpl implements QuestionService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void delete(int id) {
+        questionRepository.delete(id);
+    }
+
 }
