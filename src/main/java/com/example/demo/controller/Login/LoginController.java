@@ -17,9 +17,9 @@ public class LoginController {
         this.service = service;
     }
 
-    @PostMapping(value = "/register")
+    @PostMapping(value = "/login")
     public LoginResponse createAccount(@RequestBody CreateLoginRequest request) {
-        return service.register(request);
+        return service.login(request);
     }
 
 
