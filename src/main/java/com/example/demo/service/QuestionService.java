@@ -24,4 +24,6 @@ public interface QuestionService {
 
     void delete(int id);
 
+    void publish(int questionId) throws ObjectNotFoundException;
+
 }
