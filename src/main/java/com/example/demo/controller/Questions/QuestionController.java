@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@RestController(value = "/questions")
+@RestController
 public class QuestionController {
 
     private QuestionService service;
@@ -19,17 +19,17 @@ public class QuestionController {
         this.service = service;
     }
 
-    @GetMapping(value = "/{questionId}")
+    @GetMapping(value = "/questions/{questionId}")
     public QuestionResponse getQuestion(@PathVariable("questionId") int questionId) throws ObjectNotFoundException {
         return service.findById(questionId);
     }
 
-    @PostMapping
+    @PostMapping(value = "/questions")
     public QuestionResponse create(@RequestBody CreateQuestionRequest request) {
         return service.save(request);
     }
 
-    @GetMapping
+    @GetMapping(value = "/questions")
     public List<QuestionResponse> getQuestionsForLectureAfter(@RequestParam("lectureId") int lectureId,
                                                               @RequestParam("after") LocalDateTime after) throws ObjectNotFoundException {
         if (after == null){

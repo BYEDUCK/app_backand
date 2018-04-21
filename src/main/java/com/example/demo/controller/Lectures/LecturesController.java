@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController(value = "/lectures")
+@RestController
 public class LecturesController {
 
     private LectureService service;
@@ -21,17 +21,17 @@ public class LecturesController {
         this.service = service;
     }
 
-    @GetMapping(value = "/{lectureId}")
+    @GetMapping(value = "/lectures/{lectureId}")
     public LectureResponse getLecture(@PathVariable("lectureId") int lectureId) throws ObjectNotFoundException {
        return service.findById(lectureId);
     }
 
-    @GetMapping
+    @GetMapping(value = "/lectures")
     public List<LectureResponse> getAllLectures() {
         return service.findAll();
     }
 
-    @PostMapping
+    @PostMapping(value = "/lectures")
     public LectureResponse create() {
         return service.save();
     }

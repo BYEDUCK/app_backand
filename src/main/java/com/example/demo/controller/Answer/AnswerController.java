@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/answers")
+@RestController
 public class AnswerController {
 
     AnswerService service;
@@ -19,8 +19,8 @@ public class AnswerController {
         this.service = service;
     }
 
-    @GetMapping
-    public List<AnswerResponse> getAnswersForQuestionAfter (@RequestParam("questionId") int questionId) {
+    @GetMapping(value = "/answers")
+    public List<AnswerResponse> getAnswersForQuestion(@RequestParam("questionId") int questionId) {
         return service.findAllAnswersForQuestions(questionId);
     }
 
