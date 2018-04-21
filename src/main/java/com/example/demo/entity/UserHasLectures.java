@@ -27,6 +27,6 @@ public class UserHasLectures {
     private Lecture lecture;
 
     @Column(name = "is_owner")
-    private boolean isOwner;
+    private int isOwner;
 
 }
