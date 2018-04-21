@@ -37,4 +37,14 @@ public class QuestionController {
         }
         return service.findByLectureIdAfterTime(lectureId, after);
     }
+
+    @PutMapping(value = "/questions")
+    public QuestionResponse edit(@RequestBody UpdateQuestionRequest request){
+       return service.save(request);
+    }
+
+    @DeleteMapping(value = "/questions/{questionId}")
+    public void delete(@PathVariable("questionId") int questionId){
+        service.delete(questionId);
+    }
 }

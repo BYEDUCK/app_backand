@@ -20,6 +20,9 @@ public class Lecture {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "abbreviation")
     private String abbreviation;
 
