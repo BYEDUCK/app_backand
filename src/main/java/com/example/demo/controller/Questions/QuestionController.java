@@ -25,7 +25,7 @@ public class QuestionController {
     }
 
     @PostMapping(value = "/questions")
-    public QuestionResponse create(@RequestBody CreateQuestionRequest request) {
+    public QuestionResponse create(@RequestBody CreateQuestionRequest request) throws ObjectNotFoundException {
         return service.save(request);
     }
 

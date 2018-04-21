@@ -12,7 +12,7 @@ public interface QuestionService {
 
 
     //adding new Question
-    QuestionResponse save(CreateQuestionRequest request);
+    QuestionResponse save(CreateQuestionRequest request) throws ObjectNotFoundException;
 
     QuestionResponse update(UpdateQuestionRequest request) throws ObjectNotFoundException;
 
