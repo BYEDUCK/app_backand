@@ -8,6 +8,7 @@ import com.example.demo.entity.Answer;
 import com.example.demo.entity.Question;
 import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.repository.AnswerRepository;
+import com.example.demo.repository.LecturesRepository;
 import com.example.demo.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,16 +23,19 @@ public class QuestionServiceImpl implements QuestionService {
 
     private QuestionRepository questionRepository;
     private AnswerRepository answerRepository;
+    private LecturesRepository lecturesRepository;
 
     @Autowired
     public QuestionServiceImpl(QuestionRepository questionRepository,
-                               AnswerRepository answerRepository) {
+                               AnswerRepository answerRepository,
+                               LecturesRepository lecturesRepository) {
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
+        this.lecturesRepository = lecturesRepository;
     }
 
     @Override
-    public QuestionResponse save(CreateQuestionRequest request) {
+    public QuestionResponse save(CreateQuestionRequest request) throws ObjectNotFoundException {
         Question question = createQuestionFromRequest(request);
         question = saveAnswers(request.getAnswers(), questionRepository.save(question));
         return new QuestionResponse(question);
@@ -47,9 +51,12 @@ public class QuestionServiceImpl implements QuestionService {
         return new QuestionResponse(question);
     }
 
-    private Question createQuestionFromRequest(CreateQuestionRequest request) {
+    private Question createQuestionFromRequest(CreateQuestionRequest request) throws ObjectNotFoundException {
         Question question = new Question();
         question.setContent(request.getText());
+        question.setLecture(lecturesRepository.findById(request.getLectureId()).orElseThrow(ObjectNotFoundException::new));
+        question.setPublished(request.isPublished());
+        question.setCreatedAt(LocalDateTime.now());
         return question;
     }
 

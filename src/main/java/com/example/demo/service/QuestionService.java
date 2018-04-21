@@ -12,7 +12,7 @@ public interface QuestionService {
 
 
     //adding new Question
-    QuestionResponse save(CreateQuestionRequest request);
+    QuestionResponse save(CreateQuestionRequest request) throws ObjectNotFoundException;
 
     QuestionResponse update(UpdateQuestionRequest request) throws ObjectNotFoundException;
 
@@ -21,8 +21,6 @@ public interface QuestionService {
 
     //Getting all questions after time
     List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, boolean published) throws ObjectNotFoundException;
-
-    QuestionResponse putQuestion();
   
     void delete(int id);
 

@@ -11,17 +11,15 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class CreateLecturesRequest {
+public class CreateLectureRequest {
     private String name;
-    private String abbreviation;
     private Day day;
-    private LocalTime startHour;
-    private LocalTime finishHour;
+    private Integer startHour;
+    private Integer finishHour;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
         lecture.setName(this.name);
-        lecture.setAbbreviation(this.abbreviation);
         lecture.setDay(this.day);
         lecture.setStarHour(this.startHour);
         lecture.setFinishHour(this.finishHour);

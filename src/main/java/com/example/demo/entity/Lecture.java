@@ -33,10 +33,10 @@ public class Lecture {
     private Day day;
 
     @Column(name = "startHour")
-    private LocalTime starHour;
+    private Integer starHour;
 
     @Column(name = "finishHour")
-    private LocalTime finishHour;
+    private Integer finishHour;
 
     @OneToMany(mappedBy = "lecture")
     private List<Question> questionList = new ArrayList<>();
