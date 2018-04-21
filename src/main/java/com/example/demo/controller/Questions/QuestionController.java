@@ -39,7 +39,7 @@ public class QuestionController {
     }
 
     @PutMapping(value = "/questions")
-    public QuestionResponse edit(@RequestBody CreateQuestionRequest request){
+    public QuestionResponse edit(@RequestBody UpdateQuestionRequest request){
        return service.save(request);
     }
 
