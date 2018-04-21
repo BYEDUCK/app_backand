@@ -37,4 +37,7 @@ public class Question {
     @OneToMany(mappedBy = "question")
     private List<Answer> answers = new ArrayList<>();
 
+    @OneToMany(mappedBy = "question")
+    private List<AnswerEvent> answerEvent;
+
 }
