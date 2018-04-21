@@ -31,16 +31,17 @@ public class QuestionController {
 
     @GetMapping(value = "/questions")
     public List<QuestionResponse> getQuestionsForLectureAfter(@RequestParam("lectureId") int lectureId,
-                                                              @RequestParam("after") LocalDateTime after) throws ObjectNotFoundException {
+                                                              @RequestParam("after") LocalDateTime after,
+                                                              @RequestParam("published") boolean published) throws ObjectNotFoundException {
         if (after == null){
             after = LocalDateTime.of(2006,5,12,5,15);
         }
-        return service.findByLectureIdAfterTime(lectureId, after);
+        return service.findByLectureIdAfterTime(lectureId, after, published);
     }
 
     @PutMapping(value = "/questions")
-    public QuestionResponse edit(@RequestBody UpdateQuestionRequest request){
-       return service.save(request);
+    public QuestionResponse edit(@RequestBody UpdateQuestionRequest request) throws ObjectNotFoundException {
+       return service.update(request);
     }
 
     @DeleteMapping(value = "/questions/{questionId}")
@@ -48,5 +49,8 @@ public class QuestionController {
         service.delete(questionId);
     }
 
-    
+    @PostMapping(value = "/questions/{questionId}/publish")
+    public void publish(@PathVariable("questionId") int questionId) throws ObjectNotFoundException {
+        service.publish(questionId);
+    }
 }

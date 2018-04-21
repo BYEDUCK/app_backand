@@ -27,6 +27,9 @@ public class Question {
     @Column(name = "content", length = 512)
     private String content;
 
+    @Column(name = "is_published")
+    private boolean isPublished;
+
     @ManyToOne
     @JoinColumn(name = "lecture_id")
     private Lecture lecture;
