@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Table(name = "answer")
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Answer {
 
     @Id
