@@ -71,9 +71,10 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after) throws ObjectNotFoundException {
+    public List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, boolean published) throws ObjectNotFoundException {
         return questionRepository.findByLecture_IdAndCreatedAtAfter(lectureId, after)
                 .stream()
+                .filter(question -> question.isPublished() == published)
                 .map(QuestionResponse::new)
                 .sorted((Comparator.comparing(QuestionResponse::getCreatedAt)))
                 .collect(Collectors.toList());
