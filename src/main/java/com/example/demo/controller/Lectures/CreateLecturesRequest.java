@@ -1,9 +1,7 @@
 package com.example.demo.controller.Lectures;
 
 import com.example.demo.entity.Lecture;
-import jdk.nashorn.internal.ir.RuntimeNode;
 import lombok.*;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Time;
 
