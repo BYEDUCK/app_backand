@@ -31,8 +31,7 @@ public class LectureServiceImpl implements LectureService {
     public List<LectureResponse> findAll() {
         return lecturesRepository.findAll()
                 .stream()
-                .map(lecture -> new LectureResponse(lecture.getId(), lecture.getAbbreviation(), lecture.getName(),
-                                                    lecture.getDay(), lecture.getStarHour(), lecture.getFinishHour()))
+                .map(lecture -> new LectureResponse(lecture))
                 .collect(Collectors.toList());
     }
 
