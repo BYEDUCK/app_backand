@@ -24,7 +24,7 @@ public class Question {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "content")
+    @Column(name = "content", length = 512)
     private String content;
 
     @ManyToOne

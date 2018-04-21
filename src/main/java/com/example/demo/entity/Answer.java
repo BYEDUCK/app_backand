@@ -18,7 +18,7 @@ public class Answer {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "order")
+    @Column(name = "a_order")
     private int order;
 
     @Column(name = "content", length = 512)
