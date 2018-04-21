@@ -30,7 +30,7 @@ public class Answer {
     @JoinColumn(name = "question_id")
     private Question question;
 
-    @OneToMany(mappedBy = "answer")
+    @OneToMany(mappedBy = "answer", cascade = CascadeType.ALL)
     private List<AnswerEvent> answerEvent;
 
 }
