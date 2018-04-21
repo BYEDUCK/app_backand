@@ -24,8 +24,11 @@ public class Question {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "content")
+    @Column(name = "content", length = 512)
     private String content;
+
+    @Column(name = "is_published")
+    private boolean isPublished;
 
     @ManyToOne
     @JoinColumn(name = "lecture_id")

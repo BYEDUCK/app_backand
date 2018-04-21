@@ -37,4 +37,19 @@ public class QuestionController {
         }
         return service.findByLectureIdAfterTime(lectureId, after);
     }
+
+    @PutMapping(value = "/questions")
+    public QuestionResponse edit(@RequestBody UpdateQuestionRequest request) throws ObjectNotFoundException {
+       return service.update(request);
+    }
+
+    @DeleteMapping(value = "/questions/{questionId}")
+    public void delete(@PathVariable("questionId") int questionId){
+        service.delete(questionId);
+    }
+
+    @PostMapping(value = "/questions/{questionId}/publish")
+    public void publish(@PathVariable("questionId") int questionId) throws ObjectNotFoundException {
+        service.publish(questionId);
+    }
 }

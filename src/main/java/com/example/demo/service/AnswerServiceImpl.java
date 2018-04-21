@@ -28,4 +28,5 @@ public class AnswerServiceImpl implements AnswerService {
                 .sorted(Comparator.comparingInt(AnswerResponse::getOrder))
                 .collect(Collectors.toList());
     }
+
 }

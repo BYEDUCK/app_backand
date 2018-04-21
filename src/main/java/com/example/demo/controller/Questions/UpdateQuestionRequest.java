@@ -1,6 +1,9 @@
 package com.example.demo.controller.Questions;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -8,10 +11,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class CreateQuestionRequest {
+public class UpdateQuestionRequest {
 
+    private int id;
     private String text;
     private boolean isPublished;
     private List<CreateAnswerDTO> answers;

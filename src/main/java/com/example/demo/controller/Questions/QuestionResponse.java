@@ -16,6 +16,7 @@ public class QuestionResponse {
     private int id;
     private String content;
     private int lectureId;
+    private boolean isPublished;
     private LocalDateTime createdAt;
 
 
