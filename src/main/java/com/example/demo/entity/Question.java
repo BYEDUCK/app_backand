@@ -34,10 +34,10 @@ public class Question {
     @JoinColumn(name = "lecture_id")
     private Lecture lecture;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<AnswerEvent> answerEvent;
 
 }

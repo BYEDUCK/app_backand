@@ -38,10 +38,10 @@ public class Lecture {
     @Column(name = "finishHour")
     private Integer finishHour;
 
-    @OneToMany(mappedBy = "lecture")
+    @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "lecture")
+    @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL)
     private List<UserHasLectures> studentsOnLecture = new ArrayList<>();
 
 }
