@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController(value = "/lectures")
@@ -21,7 +20,6 @@ public class LecturesController {
     public LecturesController(LectureService service){
         this.service = service;
     }
-
 
     @GetMapping(value = "/{lectureId}")
     public LectureResponse getLecture(@PathVariable("lectureId") int lectureId) throws ObjectNotFoundException {
