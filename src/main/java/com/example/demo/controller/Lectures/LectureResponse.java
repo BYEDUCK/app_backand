@@ -17,8 +17,8 @@ public class LectureResponse {
     private String abbreviation;
     private String name;
     private Day day;
-    private LocalTime startDate;
-    private LocalTime finishDate;
+    private Integer startDate;
+    private Integer finishDate;
 
     public LectureResponse(Lecture lecture) {
         this.id = lecture.getId();

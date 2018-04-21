@@ -14,8 +14,8 @@ import java.time.LocalTime;
 public class CreateLectureRequest {
     private String name;
     private Day day;
-    private LocalTime startHour;
-    private LocalTime finishHour;
+    private Integer startHour;
+    private Integer finishHour;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
