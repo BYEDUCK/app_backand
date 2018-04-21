@@ -1,6 +1,7 @@
 package com.example.demo.controller.Questions;
 
 import com.example.demo.entity.Lecture;
+import com.example.demo.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,4 +19,10 @@ public class QuestionResponse {
     private LocalDateTime createdAt;
 
 
+    public QuestionResponse(Question question) {
+        id = question.getId();
+        content = question.getContent();
+        lectureId = question.getLecture().getId();
+        createdAt = question.getCreatedAt();
+    }
 }
