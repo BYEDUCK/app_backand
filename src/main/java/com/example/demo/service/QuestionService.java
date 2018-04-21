@@ -20,7 +20,7 @@ public interface QuestionService {
     QuestionResponse findById(int id) throws ObjectNotFoundException;
 
     //Getting all questions after time
-    List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, boolean published) throws ObjectNotFoundException;
+    List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, int published) throws ObjectNotFoundException;
   
     void delete(int id);
 

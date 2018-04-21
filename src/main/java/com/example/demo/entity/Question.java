@@ -28,7 +28,7 @@ public class Question {
     private String content;
 
     @Column(name = "is_published")
-    private boolean isPublished;
+    private int isPublished;
 
     @ManyToOne
     @JoinColumn(name = "lecture_id")
