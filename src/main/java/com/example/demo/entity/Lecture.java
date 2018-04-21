@@ -41,4 +41,7 @@ public class Lecture {
     @OneToMany(mappedBy = "lecture")
     private List<Question> questionList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "lecture")
+    private List<UserHasLectures> studentsOnLecture = new ArrayList<>();
+
 }
