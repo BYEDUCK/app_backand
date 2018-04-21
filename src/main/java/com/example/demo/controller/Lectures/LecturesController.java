@@ -33,5 +33,9 @@ public class LecturesController {
         return service.save(request);
     }
 
+    @GetMapping(value = "/lectures/abrev/{lectureAbrev}")
+    public LectureResponse getLectureByAbrev(@PathVariable("lectureAbrev") String lectureAbrev) throws ObjectNotFoundException {
+        return service.findByAbbreviation(lectureAbrev);
+    }
 
 }

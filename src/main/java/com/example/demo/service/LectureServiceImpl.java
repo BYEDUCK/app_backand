@@ -43,4 +43,10 @@ public class LectureServiceImpl implements LectureService {
         lecture = lecturesRepository.save(lecture);
         return new LectureResponse(lecture);
     }
+
+    @Override
+    public LectureResponse findByAbbreviation(String abbreviation) throws ObjectNotFoundException {
+        Lecture lecture = lecturesRepository.findByAbbreviation(abbreviation).orElseThrow(ObjectNotFoundException::new);
+        return new LectureResponse(lecture);
+    }
 }
