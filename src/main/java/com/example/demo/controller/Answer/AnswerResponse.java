@@ -14,5 +14,5 @@ public class AnswerResponse {
     private int id;
     private int order;
     private String content;
-    private Question question;
+    private int questionId;
 }

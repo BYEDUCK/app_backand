@@ -14,7 +14,7 @@ public class QuestionResponse {
 
     private int id;
     private String content;
-    private Lecture lecture;
+    private int lectureId;
     private LocalDateTime createdAt;
 
 
