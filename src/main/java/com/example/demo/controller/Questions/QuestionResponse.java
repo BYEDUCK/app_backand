@@ -18,7 +18,7 @@ public class QuestionResponse {
     private int id;
     private String content;
     private int lectureId;
-    private boolean isPublished;
+    private int isPublished;
     private LocalDateTime createdAt;
     private List<AnswerResponse> answers;
 
@@ -28,6 +28,7 @@ public class QuestionResponse {
         content = question.getContent();
         lectureId = question.getLecture().getId();
         createdAt = question.getCreatedAt();
+        isPublished = question.getIsPublished();
         answers = question.getAnswers().stream().map(AnswerResponse::new).collect(Collectors.toList());
     }
 }
