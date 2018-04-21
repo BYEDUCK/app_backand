@@ -17,7 +17,7 @@ public class UserLecturesController {
         this.service = service;
     }
 
-    @PostMapping(value = "user_lectures")
+    @PostMapping(value = "/user_lectures")
     public void assignUserToLecture(@RequestBody UserLecturesRequest request){
         service.assignUserToLecture(request);
     }
