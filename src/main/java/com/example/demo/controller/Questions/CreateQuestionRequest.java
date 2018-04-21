@@ -13,6 +13,7 @@ import java.util.List;
 public class CreateQuestionRequest {
 
     private String text;
+    private boolean isPublished;
     private List<CreateAnswerDTO> answers;
 
 }
