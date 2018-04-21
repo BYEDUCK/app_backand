@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
-    Optional<Question> getById(int id);
+    Optional<Question> findById(int id);
 
-    Optional<Question> getByIdAfterDate(int id, LocalDateTime date);
+    Optional<Question> findByIdAndCreatedAtAfter(int id, LocalDateTime date);
 
 }
