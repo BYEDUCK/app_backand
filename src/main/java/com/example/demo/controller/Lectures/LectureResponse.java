@@ -5,7 +5,9 @@ import com.example.demo.entity.Lecture;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -17,8 +19,8 @@ public class LectureResponse {
     private String abbreviation;
     private String name;
     private Day day;
-    private Date startDate;
-    private Date finishDate;
+    private LocalDateTime startDate;
+    private LocalDateTime finishDate;
 
     public LectureResponse(Lecture lecture) {
         this.id = lecture.getId();

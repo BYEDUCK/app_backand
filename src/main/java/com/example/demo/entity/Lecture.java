@@ -2,9 +2,11 @@ package com.example.demo.entity;
 
 import com.example.demo.controller.Lectures.Day;
 import lombok.*;
+import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,9 +25,6 @@ public class Lecture {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
-    private String name;
-
     @Column(name = "abbreviation")
     private String abbreviation;
 
@@ -36,10 +35,10 @@ public class Lecture {
     private Day day;
 
     @Column(name = "startHour")
-    private Time starHour;
+    private LocalDateTime starHour;
 
     @Column(name = "finishHour")
-    private Time finishHour;
+    private LocalDateTime finishHour;
 
     @OneToMany(mappedBy = "lecture")
     private List<Question> questionList = new ArrayList<>();

@@ -4,6 +4,7 @@ import com.example.demo.entity.Lecture;
 import lombok.*;
 
 import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,8 +16,8 @@ public class CreateLecturesRequest {
     private String name;
     private String abbreviation;
     private Day day;
-    private Time startHour;
-    private Time finishHour;
+    private LocalDateTime startHour;
+    private LocalDateTime finishHour;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
