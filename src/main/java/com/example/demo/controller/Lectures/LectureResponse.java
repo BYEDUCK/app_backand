@@ -1,5 +1,6 @@
 package com.example.demo.controller.Lectures;
 
+import com.example.demo.entity.Lecture;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
