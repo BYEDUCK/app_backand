@@ -24,14 +24,16 @@ public class LectureServiceImpl implements LectureService {
     @Override
     public LectureResponse findById(int id) throws ObjectNotFoundException {
         Lecture lecture = lecturesRepository.findById(id).orElseThrow(ObjectNotFoundException::new);
-        return new LectureResponse(lecture.getId(), lecture.getAbbreviation());
+        return new LectureResponse(lecture.getId(), lecture.getAbbreviation(),lecture.getName(),lecture.getDay(),
+                                   lecture.getStarHour(), lecture.getFinishHour());
     }
 
     @Override
     public List<LectureResponse> findAll() {
         return lecturesRepository.findAll()
                 .stream()
-                .map(lecture -> new LectureResponse(lecture.getId(), lecture.getAbbreviation()))
+                .map(lecture -> new LectureResponse(lecture.getId(), lecture.getAbbreviation(), lecture.getName(),
+                                                    lecture.getDay(), lecture.getStarHour(), lecture.getFinishHour()))
                 .collect(Collectors.toList());
     }
 
@@ -40,6 +42,7 @@ public class LectureServiceImpl implements LectureService {
         Lecture lecture = new Lecture();
         lecture.setAbbreviation(RandomStringUtils.randomAlphanumeric(6));
         lecture = lecturesRepository.save(lecture);
-        return new LectureResponse(lecture.getId(), lecture.getAbbreviation());
+        return new LectureResponse(lecture.getId(), lecture.getAbbreviation(), lecture.getName(), lecture.getDay(),
+                lecture.getStarHour(), lecture.getFinishHour());
     }
 }

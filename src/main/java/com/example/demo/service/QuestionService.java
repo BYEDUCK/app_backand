@@ -19,4 +19,5 @@ public interface QuestionService {
     //Getting all questions after time
     List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after) throws ObjectNotFoundException;
 
+    QuestionResponse putQuestion();
 }

@@ -12,4 +12,6 @@ public interface LectureService {
     List<LectureResponse> findAll();
 
     LectureResponse save();
+
+
 }
