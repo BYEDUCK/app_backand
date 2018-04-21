@@ -13,7 +13,7 @@ import java.util.List;
 public class CreateQuestionRequest {
 
     private String text;
-    private boolean isPublished;
+    private int isPublished;
     private int lectureId;
     private List<CreateAnswerDTO> answers;
 

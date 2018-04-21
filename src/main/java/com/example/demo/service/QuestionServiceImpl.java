@@ -55,7 +55,7 @@ public class QuestionServiceImpl implements QuestionService {
         Question question = new Question();
         question.setContent(request.getText());
         question.setLecture(lecturesRepository.findById(request.getLectureId()).orElseThrow(ObjectNotFoundException::new));
-        question.setPublished(request.isPublished());
+        question.setIsPublished(request.getIsPublished());
         question.setCreatedAt(LocalDateTime.now());
         return question;
     }
@@ -78,10 +78,10 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, boolean published) throws ObjectNotFoundException {
+    public List<QuestionResponse> findByLectureIdAfterTime(int lectureId, LocalDateTime after, int published) throws ObjectNotFoundException {
         return questionRepository.findByLecture_IdAndCreatedAtAfter(lectureId, after)
                 .stream()
-                .filter(question -> question.isPublished() == published)
+                .filter(question -> question.getIsPublished() == published)
                 .map(QuestionResponse::new)
                 .sorted((Comparator.comparing(QuestionResponse::getCreatedAt)))
                 .collect(Collectors.toList());
@@ -95,7 +95,7 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public void publish(int questionId) throws ObjectNotFoundException {
         Question question = questionRepository.findById(questionId).orElseThrow(ObjectNotFoundException::new);
-        question.setPublished(true);
+        question.setIsPublished(1);
         questionRepository.save(question);
     }
 }

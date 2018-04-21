@@ -34,7 +34,7 @@ public class QuestionController {
     public List<QuestionResponse> getQuestionsForLectureAfter(@RequestParam("lectureId") int lectureId,
                                                               @RequestParam(value = "after", required = false)
                                                               @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime after,
-                                                              @RequestParam("published") boolean published) throws ObjectNotFoundException {
+                                                              @RequestParam("published") int published) throws ObjectNotFoundException {
         if (after == null) {
             after = LocalDateTime.of(2006, 5, 12, 5, 15);
         }
