@@ -28,6 +28,7 @@ public class Lecture {
     @Column(name = "name")
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "day")
     private Day day;
 

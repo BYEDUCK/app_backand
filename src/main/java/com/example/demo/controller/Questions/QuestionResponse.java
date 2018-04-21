@@ -1,6 +1,5 @@
 package com.example.demo.controller.Questions;
 
-import com.example.demo.entity.Lecture;
 import com.example.demo.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
