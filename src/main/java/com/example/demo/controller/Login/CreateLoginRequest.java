@@ -12,7 +12,7 @@ import lombok.*;
 
 public class CreateLoginRequest {
 
-    public String email;
-    public String password;
+    private String email;
+    private String password;
 
 }
