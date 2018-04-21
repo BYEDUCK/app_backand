@@ -3,8 +3,7 @@ package com.example.demo.controller.Lectures;
 import com.example.demo.entity.Lecture;
 import lombok.*;
 
-import java.sql.Time;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Getter
 @Setter
@@ -16,8 +15,8 @@ public class CreateLecturesRequest {
     private String name;
     private String abbreviation;
     private Day day;
-    private LocalDateTime startHour;
-    private LocalDateTime finishHour;
+    private LocalTime startHour;
+    private LocalTime finishHour;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();

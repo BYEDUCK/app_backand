@@ -2,13 +2,10 @@ package com.example.demo.entity;
 
 import com.example.demo.controller.Lectures.Day;
 import lombok.*;
-import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -35,10 +32,10 @@ public class Lecture {
     private Day day;
 
     @Column(name = "startHour")
-    private LocalDateTime starHour;
+    private LocalTime starHour;
 
     @Column(name = "finishHour")
-    private LocalDateTime finishHour;
+    private LocalTime finishHour;
 
     @OneToMany(mappedBy = "lecture")
     private List<Question> questionList = new ArrayList<>();
