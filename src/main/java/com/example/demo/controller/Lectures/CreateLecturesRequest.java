@@ -13,7 +13,6 @@ import java.time.LocalTime;
 @ToString
 public class CreateLecturesRequest {
     private String name;
-    private String abbreviation;
     private Day day;
     private LocalTime startHour;
     private LocalTime finishHour;
@@ -21,7 +20,6 @@ public class CreateLecturesRequest {
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
         lecture.setName(this.name);
-        lecture.setAbbreviation(this.abbreviation);
         lecture.setDay(this.day);
         lecture.setStarHour(this.startHour);
         lecture.setFinishHour(this.finishHour);

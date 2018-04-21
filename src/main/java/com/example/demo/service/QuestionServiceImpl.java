@@ -50,6 +50,8 @@ public class QuestionServiceImpl implements QuestionService {
     private Question createQuestionFromRequest(CreateQuestionRequest request) {
         Question question = new Question();
         question.setContent(request.getText());
+        question.setPublished(request.isPublished());
+        question.setCreatedAt(LocalDateTime.now());
         return question;
     }
 
