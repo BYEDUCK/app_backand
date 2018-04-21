@@ -15,6 +15,7 @@ public class UpdateQuestionRequest {
 
     private int id;
     private String text;
+    private boolean isPublished;
     private List<CreateAnswerDTO> answers;
 
 }

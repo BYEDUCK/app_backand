@@ -67,8 +67,7 @@ public class QuestionServiceImpl implements QuestionService {
     public QuestionResponse findById(int id) throws ObjectNotFoundException {
 
         Question question = questionRepository.findById(id).orElseThrow(ObjectNotFoundException::new);
-        return new QuestionResponse(question.getId(), question.getContent(),
-                question.getLecture().getId(), question.getCreatedAt());
+        return new QuestionResponse(question);
     }
 
     @Override
@@ -85,4 +84,10 @@ public class QuestionServiceImpl implements QuestionService {
         questionRepository.delete(id);
     }
 
+    @Override
+    public void publish(int questionId) throws ObjectNotFoundException {
+        Question question = questionRepository.findById(questionId).orElseThrow(ObjectNotFoundException::new);
+        question.setPublished(true);
+        questionRepository.save(question);
+    }
 }
