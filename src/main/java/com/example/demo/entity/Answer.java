@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 @Entity
 @Table(name = "answer")
@@ -30,6 +31,6 @@ public class Answer {
     private Question question;
 
     @OneToMany(mappedBy = "answer")
-    private AnswerEvent answerEvent;
+    private List<AnswerEvent> answerEvent;
 
 }
