@@ -11,7 +11,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class CreateLecturesRequest {
+public class CreateLectureRequest {
     private String name;
     private Day day;
     private LocalTime startHour;

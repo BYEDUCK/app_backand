@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.Lectures.CreateLecturesRequest;
+import com.example.demo.controller.Lectures.CreateLectureRequest;
 import com.example.demo.controller.Lectures.LectureResponse;
 import com.example.demo.entity.Lecture;
 import com.example.demo.exceptions.ObjectNotFoundException;
@@ -37,7 +37,7 @@ public class LectureServiceImpl implements LectureService {
     }
 
     @Override
-    public LectureResponse save(CreateLecturesRequest request) {
+    public LectureResponse save(CreateLectureRequest request) {
         Lecture lecture = request.toLecture();
         lecture.setAbbreviation(RandomStringUtils.randomAlphanumeric(6));
         lecture = lecturesRepository.save(lecture);

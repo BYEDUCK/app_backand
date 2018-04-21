@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.Lectures.CreateLecturesRequest;
+import com.example.demo.controller.Lectures.CreateLectureRequest;
 import com.example.demo.controller.Lectures.LectureResponse;
 import com.example.demo.exceptions.ObjectNotFoundException;
 
@@ -12,7 +12,7 @@ public interface LectureService {
 
     List<LectureResponse> findAll();
 
-    LectureResponse save(CreateLecturesRequest request);
+    LectureResponse save(CreateLectureRequest request);
 
 
 }
