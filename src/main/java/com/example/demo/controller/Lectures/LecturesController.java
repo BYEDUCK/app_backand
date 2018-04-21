@@ -1,6 +1,7 @@
 package com.example.demo.controller.Lectures;
 
 
+import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.service.LectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ public class LecturesController {
 
 
     @GetMapping(value = "/{lectureId}")
-    public LectureResponse getLecture(@PathVariable("lectureId") int lectureId) {
+    public LectureResponse getLecture(@PathVariable("lectureId") int lectureId) throws ObjectNotFoundException {
        return service.findById(lectureId);
     }
 
