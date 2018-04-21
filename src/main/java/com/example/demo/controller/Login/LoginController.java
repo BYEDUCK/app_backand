@@ -1,7 +1,7 @@
 package com.example.demo.controller.Login;
 
 
-import com.example.demo.exceptions.ObjectNotFoundException;
+import com.example.demo.exceptions.UnathorizedException;
 import com.example.demo.service.login.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,7 @@ public class LoginController {
     }
 
     @PostMapping(value = "/login")
-    public LoginResponse createAccount(@RequestBody CreateLoginRequest request) throws ObjectNotFoundException {
+    public LoginResponse createAccount(@RequestBody LoginRequest request) throws UnathorizedException {
         return service.login(request);
     }
 

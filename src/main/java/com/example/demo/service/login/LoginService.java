@@ -1,11 +1,11 @@
 package com.example.demo.service.login;
 
-import com.example.demo.controller.Login.CreateLoginRequest;
+import com.example.demo.controller.Login.LoginRequest;
 import com.example.demo.controller.Login.LoginResponse;
-import com.example.demo.exceptions.ObjectNotFoundException;
+import com.example.demo.exceptions.UnathorizedException;
 
 public interface LoginService {
 
-    LoginResponse login(CreateLoginRequest request) throws ObjectNotFoundException;
+    LoginResponse login(LoginRequest request) throws UnathorizedException;
 
 }

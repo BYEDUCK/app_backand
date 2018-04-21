@@ -10,7 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 
-public class CreateLoginRequest {
+public class LoginRequest {
 
     private String email;
     private String password;
