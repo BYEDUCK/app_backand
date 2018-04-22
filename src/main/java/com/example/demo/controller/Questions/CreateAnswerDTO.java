@@ -14,12 +14,14 @@ public class CreateAnswerDTO {
 
     private String text;
     private int order;
+    private int isCorrect;
 
     public Answer toAnswer(Question question) {
         Answer answer = new Answer();
         answer.setContent(this.text);
         answer.setOrder(this.order);
         answer.setQuestion(question);
+        answer.setIsCorrect(this.isCorrect);
         return answer;
     }
 
