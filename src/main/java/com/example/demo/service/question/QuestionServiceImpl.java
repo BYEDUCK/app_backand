@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.question;
 
 import com.example.demo.controller.Questions.CreateAnswerDTO;
 import com.example.demo.controller.Questions.CreateQuestionRequest;

@@ -1,7 +1,7 @@
 package com.example.demo.controller.registration;
 
 import com.example.demo.service.registration.RegistrationService;
-import com.example.demo.service.registration.UserExistsException;
+import com.example.demo.exceptions.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

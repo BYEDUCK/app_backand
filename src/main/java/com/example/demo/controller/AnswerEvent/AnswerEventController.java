@@ -1,7 +1,7 @@
 package com.example.demo.controller.AnswerEvent;
 
 import com.example.demo.exceptions.ObjectNotFoundException;
-import com.example.demo.service.AnswerEventService;
+import com.example.demo.service.answer_event.AnswerEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

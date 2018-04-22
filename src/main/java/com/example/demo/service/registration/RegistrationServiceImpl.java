@@ -3,6 +3,7 @@ package com.example.demo.service.registration;
 import com.example.demo.controller.registration.RegistrationRequest;
 import com.example.demo.controller.registration.RegistrationResponse;
 import com.example.demo.entity.User;
+import com.example.demo.exceptions.UserExistsException;
 import com.example.demo.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

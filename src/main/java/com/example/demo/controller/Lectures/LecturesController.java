@@ -2,7 +2,7 @@ package com.example.demo.controller.Lectures;
 
 
 import com.example.demo.exceptions.ObjectNotFoundException;
-import com.example.demo.service.LectureService;
+import com.example.demo.service.lecture.LectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

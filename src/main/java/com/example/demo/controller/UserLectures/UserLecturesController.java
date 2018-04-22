@@ -1,7 +1,7 @@
 package com.example.demo.controller.UserLectures;
 
 import com.example.demo.exceptions.ForbiddenAccessException;
-import com.example.demo.service.UserLectureService;
+import com.example.demo.service.user_lecture.UserLectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +24,7 @@ public class UserLecturesController {
         service.assignUserToLecture(request);
     }
 
-    @DeleteMapping(value = "user_lectures")
+    @DeleteMapping(value = "/user_lectures")
     public void removeUserFromLecture(@RequestBody UserLecturesRequest request) throws ForbiddenAccessException {
         service.deleteUserFromLecture(request);
     }

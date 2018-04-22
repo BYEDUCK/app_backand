@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.answer_event;
 
 import com.example.demo.controller.AnswerEvent.AnswerEventRequest;
 import com.example.demo.exceptions.ObjectNotFoundException;

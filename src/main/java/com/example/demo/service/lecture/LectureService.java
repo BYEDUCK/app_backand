@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.lecture;
 
 import com.example.demo.controller.Lectures.CreateLectureRequest;
 import com.example.demo.controller.Lectures.LectureResponse;
