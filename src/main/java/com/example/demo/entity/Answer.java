@@ -26,6 +26,9 @@ public class Answer {
     @Column(name = "content", length = 512)
     private String content;
 
+    @Column(name = "is_correct")
+    private int isCorrect;
+
     @ManyToOne
     @JoinColumn(name = "question_id")
     private Question question;
