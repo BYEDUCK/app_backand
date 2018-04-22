@@ -18,8 +18,8 @@ public class AnswerEventController {
     }
 
     @PostMapping(value = "/answer_event")
-    public void add(@RequestBody AnswerEventRequest request) throws ObjectNotFoundException {
-        service.save(request);
+    public AnswerEventResponse add(@RequestBody AnswerEventRequest request) throws ObjectNotFoundException {
+        return service.save(request);
     }
 
 }

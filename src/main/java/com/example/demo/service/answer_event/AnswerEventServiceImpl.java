@@ -1,6 +1,7 @@
 package com.example.demo.service.answer_event;
 
 import com.example.demo.controller.AnswerEvent.AnswerEventRequest;
+import com.example.demo.controller.AnswerEvent.AnswerEventResponse;
 import com.example.demo.entity.Answer;
 import com.example.demo.entity.AnswerEvent;
 import com.example.demo.entity.Question;
@@ -31,7 +32,7 @@ public class AnswerEventServiceImpl implements AnswerEventService {
     }
 
     @Override
-    public void save(AnswerEventRequest request) throws ObjectNotFoundException {
+    public AnswerEventResponse save(AnswerEventRequest request) throws ObjectNotFoundException {
         AnswerEvent answerEvent = new AnswerEvent();
         Answer answer = answerRepository.findById(request.getAnswerId())
                 .orElseThrow(ObjectNotFoundException::new);
@@ -42,5 +43,6 @@ public class AnswerEventServiceImpl implements AnswerEventService {
         answerEvent.setQuestion(question);
         answerEvent.setTime(timeNow);
         answerEventRepository.save(answerEvent);
+        return new AnswerEventResponse(answer.getIsCorrect());
     }
 }
