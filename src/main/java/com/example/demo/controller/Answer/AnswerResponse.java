@@ -15,11 +15,13 @@ public class AnswerResponse {
     private int order;
     private String content;
     private int questionId;
+    private int isCorrect;
 
     public AnswerResponse(Answer answer) {
         this.id = answer.getId();
         this.content = answer.getContent();
         this.order = answer.getOrder();
         this.questionId = answer.getQuestion().getId();
+        this.isCorrect = answer.getIsCorrect();
     }
 }
