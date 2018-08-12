@@ -25,3 +25,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+/META-INF/
+/bin/
+src/main/java/META-INF/
