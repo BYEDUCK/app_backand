@@ -3,6 +3,7 @@ package com.example.demo.controller.Lectures;
 import com.example.demo.entity.Lecture;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.time.LocalTime;
 
 @Getter
@@ -16,6 +17,7 @@ public class CreateLectureRequest {
     private Day day;
     private Integer startHour;
     private Integer finishHour;
+    private Timestamp createdAt;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
@@ -23,6 +25,7 @@ public class CreateLectureRequest {
         lecture.setDay(this.day);
         lecture.setStarHour(this.startHour);
         lecture.setFinishHour(this.finishHour);
+        lecture.setCreatedAt(this.createdAt);
         return lecture;
     }
 }
