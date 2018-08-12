@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import com.example.demo.entity.Answer;
-import com.example.demo.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -3,7 +3,6 @@ package com.example.demo.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.awt.event.ActionEvent;
 import java.util.List;
 
 @Entity

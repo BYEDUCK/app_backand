@@ -16,4 +16,6 @@ public interface LectureService {
     LectureResponse save(CreateLectureRequest request);
 
     LectureResponse findByAbbreviation(String abbreviation) throws ObjectNotFoundException;
+
+    void deleteById(int id) throws ObjectNotFoundException;
 }

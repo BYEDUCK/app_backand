@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -48,5 +49,11 @@ public class LectureServiceImpl implements LectureService {
     public LectureResponse findByAbbreviation(String abbreviation) throws ObjectNotFoundException {
         Lecture lecture = lecturesRepository.findByAbbreviation(abbreviation).orElseThrow(ObjectNotFoundException::new);
         return new LectureResponse(lecture);
+    }
+
+    @Override
+    public void deleteById(int id) throws ObjectNotFoundException {
+        Lecture lecture = lecturesRepository.findById(id).orElseThrow(ObjectNotFoundException::new);
+        lecturesRepository.delete(lecture);
     }
 }

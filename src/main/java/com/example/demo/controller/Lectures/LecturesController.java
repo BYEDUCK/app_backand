@@ -14,13 +14,13 @@ public class LecturesController {
     private LectureService service;
 
     @Autowired
-    public LecturesController(LectureService service){
+    public LecturesController(LectureService service) {
         this.service = service;
     }
 
     @GetMapping(value = "/lectures/{lectureId}")
     public LectureResponse getLecture(@PathVariable("lectureId") int lectureId) throws ObjectNotFoundException {
-       return service.findById(lectureId);
+        return service.findById(lectureId);
     }
 
     @GetMapping(value = "/lectures")
@@ -36,6 +36,11 @@ public class LecturesController {
     @GetMapping(value = "/lectures/abrev/{lectureAbrev}")
     public LectureResponse getLectureByAbrev(@PathVariable("lectureAbrev") String lectureAbrev) throws ObjectNotFoundException {
         return service.findByAbbreviation(lectureAbrev);
+    }
+
+    @DeleteMapping(value = "/lectures/{lectureId}")
+    public void deleteLecture(@PathVariable("lectureId") int lectureId) throws ObjectNotFoundException {
+        service.deleteById(lectureId);
     }
 
 }

@@ -4,7 +4,6 @@ import com.example.demo.controller.Lectures.Day;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
