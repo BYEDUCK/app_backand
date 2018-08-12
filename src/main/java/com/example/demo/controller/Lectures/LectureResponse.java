@@ -15,16 +15,18 @@ public class LectureResponse {
     private String abbreviation;
     private String name;
     private Day day;
-    private Integer startDate;
-    private Integer finishDate;
+    private Integer startHour;
+    private Integer finishHour;
+    private String createdAt;
 
     public LectureResponse(Lecture lecture) {
         this.id = lecture.getId();
         this.abbreviation = lecture.getAbbreviation();
         this.name = lecture.getName();
         this.day = lecture.getDay();
-        this.startDate = lecture.getStarHour();
-        this.finishDate = lecture.getFinishHour();
+        this.startHour = lecture.getStarHour();
+        this.finishHour = lecture.getFinishHour();
+        this.createdAt = lecture.getCreatedAt().toString();
     }
 
 }

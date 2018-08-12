@@ -4,6 +4,7 @@ import com.example.demo.controller.Lectures.Day;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class Lecture {
 
     @Column(name = "finishHour")
     private Integer finishHour;
+
+    @Column(name = "createdAt")
+    private Timestamp createdAt;
 
     @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
