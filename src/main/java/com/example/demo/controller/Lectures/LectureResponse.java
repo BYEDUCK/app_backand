@@ -18,6 +18,7 @@ public class LectureResponse {
     private String startHour;
     private String finishHour;
     private String createdAt;
+    private String lastUpdatedAt;
 
     public LectureResponse(Lecture lecture) {
         this.id = lecture.getId();
@@ -27,6 +28,7 @@ public class LectureResponse {
         this.startHour = lecture.getStarHour();
         this.finishHour = lecture.getFinishHour();
         this.createdAt = lecture.getCreatedAt().toString();
+        this.lastUpdatedAt = lecture.getLastUpdatedAt().toString();
     }
 
 }

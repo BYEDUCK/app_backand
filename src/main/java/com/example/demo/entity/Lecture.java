@@ -41,6 +41,9 @@ public class Lecture {
     @Column(name = "createdAt")
     private Timestamp createdAt;
 
+    @Column(name = "lastUpdatedAt")
+    private Timestamp lastUpdatedAt;
+
     @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
 

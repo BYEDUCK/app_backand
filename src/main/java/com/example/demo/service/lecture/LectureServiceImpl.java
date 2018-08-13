@@ -2,6 +2,7 @@ package com.example.demo.service.lecture;
 
 import com.example.demo.controller.Lectures.CreateLectureRequest;
 import com.example.demo.controller.Lectures.LectureResponse;
+import com.example.demo.controller.Lectures.UpdateLectureRequest;
 import com.example.demo.entity.Lecture;
 import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.repository.LecturesRepository;
@@ -44,6 +45,7 @@ public class LectureServiceImpl implements LectureService {
         lecture.setAbbreviation(RandomStringUtils.randomAlphanumeric(6));
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         lecture.setCreatedAt(timestamp);
+        lecture.setLastUpdatedAt(timestamp);
         lecture = lecturesRepository.save(lecture);
         return new LectureResponse(lecture);
     }
@@ -51,6 +53,19 @@ public class LectureServiceImpl implements LectureService {
     @Override
     public LectureResponse findByAbbreviation(String abbreviation) throws ObjectNotFoundException {
         Lecture lecture = lecturesRepository.findByAbbreviation(abbreviation).orElseThrow(ObjectNotFoundException::new);
+        return new LectureResponse(lecture);
+    }
+
+    @Override
+    public LectureResponse update(UpdateLectureRequest request) throws ObjectNotFoundException {
+        Lecture lecture = lecturesRepository.findById(request.getId()).orElseThrow(ObjectNotFoundException::new);
+        lecture.setName(request.getName());
+        lecture.setDay(request.getDay());
+        lecture.setStarHour(request.getStartHour());
+        lecture.setFinishHour(request.getFinishHour());
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        lecture.setLastUpdatedAt(timestamp);
+        lecture = lecturesRepository.save(lecture);
         return new LectureResponse(lecture);
     }
 

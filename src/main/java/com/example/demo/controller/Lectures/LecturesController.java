@@ -43,4 +43,9 @@ public class LecturesController {
         service.deleteById(lectureId);
     }
 
+    @PutMapping(value = "/lectures")
+    public LectureResponse updateLecture(@RequestBody UpdateLectureRequest request) throws ObjectNotFoundException {
+        return service.update(request);
+    }
+
 }
