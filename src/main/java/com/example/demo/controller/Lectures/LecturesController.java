@@ -6,7 +6,6 @@ import com.example.demo.service.lecture.LectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -31,8 +30,6 @@ public class LecturesController {
 
     @PostMapping(value = "/lectures")
     public LectureResponse create(@RequestBody CreateLectureRequest request) {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        request.setCreatedAt(timestamp);
         return service.save(request);
     }
 

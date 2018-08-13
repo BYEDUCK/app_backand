@@ -33,10 +33,10 @@ public class Lecture {
     private Day day;
 
     @Column(name = "startHour")
-    private Integer starHour;
+    private String starHour;
 
     @Column(name = "finishHour")
-    private Integer finishHour;
+    private String finishHour;
 
     @Column(name = "createdAt")
     private Timestamp createdAt;

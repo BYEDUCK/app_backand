@@ -15,8 +15,8 @@ public class LectureResponse {
     private String abbreviation;
     private String name;
     private Day day;
-    private Integer startHour;
-    private Integer finishHour;
+    private String startHour;
+    private String finishHour;
     private String createdAt;
 
     public LectureResponse(Lecture lecture) {

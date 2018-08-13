@@ -9,6 +9,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -41,6 +42,8 @@ public class LectureServiceImpl implements LectureService {
     public LectureResponse save(CreateLectureRequest request) {
         Lecture lecture = request.toLecture();
         lecture.setAbbreviation(RandomStringUtils.randomAlphanumeric(6));
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        lecture.setCreatedAt(timestamp);
         lecture = lecturesRepository.save(lecture);
         return new LectureResponse(lecture);
     }

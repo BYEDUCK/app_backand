@@ -15,9 +15,8 @@ import java.time.LocalTime;
 public class CreateLectureRequest {
     private String name;
     private Day day;
-    private Integer startHour;
-    private Integer finishHour;
-    private Timestamp createdAt;
+    private String startHour;
+    private String finishHour;
 
     public Lecture toLecture() {
         Lecture lecture = new Lecture();
@@ -25,7 +24,6 @@ public class CreateLectureRequest {
         lecture.setDay(this.day);
         lecture.setStarHour(this.startHour);
         lecture.setFinishHour(this.finishHour);
-        lecture.setCreatedAt(this.createdAt);
         return lecture;
     }
 }
