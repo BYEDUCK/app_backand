@@ -27,7 +27,7 @@ repositories {
 jar {
     enabled = true
     baseName = 'best-quiz'
-    version = '1.0.3'
+    version = '1.0.4'
 
     manifest {
         attributes 'Main-Class': 'com.example.demo.DemoApplication'
